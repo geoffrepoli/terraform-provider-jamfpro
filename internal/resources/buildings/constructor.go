@@ -10,7 +10,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-// constructJamfProBuilding constructs a Building object from the provided schema data.
+// constructJamfProBuilding constructs a ResourceBuilding object from the provided schema data.
 func construct(d *schema.ResourceData) (*jamfpro.ResourceBuilding, error) {
 	resource := &jamfpro.ResourceBuilding{
 		Name:           d.Get("name").(string),
@@ -22,7 +22,7 @@ func construct(d *schema.ResourceData) (*jamfpro.ResourceBuilding, error) {
 		Country:        d.Get("country").(string),
 	}
 
-	// Serialize and pretty-print the Building object as JSON for logging
+	// Serialize and pretty-print the ResourceBuilding object as JSON for logging
 	resourceJSON, err := json.MarshalIndent(resource, "", "  ")
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal Jamf Pro Building '%s' to JSON: %v", resource.Name, err)
