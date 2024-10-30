@@ -10,7 +10,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-// constructJamfProDepartment constructs a Jamf Pro Department struct from Terraform resource data.
+// constructJamfProDepartment constructs a ResourceDepartment struct from Terraform resource data.
 func construct(d *schema.ResourceData) (*jamfpro.ResourceDepartment, error) {
 	resource := &jamfpro.ResourceDepartment{
 		Name: d.Get("name").(string),
