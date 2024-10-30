@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-// cconstructJamfProFileShareDistributionPoint constructs a ResourceDockItem object from the provided schema data.
+// cconstructJamfProFileShareDistributionPoint constructs a ResourceFileShareDistributionPoint object from the provided schema data.
 func construct(d *schema.ResourceData) (*jamfpro.ResourceFileShareDistributionPoint, error) {
 	resource := &jamfpro.ResourceFileShareDistributionPoint{
 		Name:                     d.Get("name").(string),
