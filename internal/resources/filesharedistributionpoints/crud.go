@@ -13,7 +13,7 @@ const (
 	JamfProResourceDistributionPoint = "Distribution Point"
 )
 
-// create is responsible for creating a new file share
+// create is responsible for creating a new Jamf Pro File Share Distribution Point in the remote system.
 func create(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	return common.Create(
 		ctx,
@@ -25,7 +25,7 @@ func create(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.
 	)
 }
 
-// read is responsible for reading the current state of a
+// read is responsible for reading the current state of a Jamf Pro File Share Distribution Point Resource from the remote system.
 func read(ctx context.Context, d *schema.ResourceData, meta interface{}, cleanup bool) diag.Diagnostics {
 	return common.Read(
 		ctx,
@@ -47,7 +47,7 @@ func readNoCleanup(ctx context.Context, d *schema.ResourceData, meta interface{}
 	return read(ctx, d, meta, false)
 }
 
-// update is responsible for updating an existing Jamf Pro Site on the remote system.
+// update is responsible for updating an existing Jamf Pro File Share Distribution Point on the remote system.
 func update(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	return common.Update(
 		ctx,
@@ -59,7 +59,7 @@ func update(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.
 	)
 }
 
-// deleteis responsible for deleting a Jamf Pro file share distribution point from the remote system.
+// delete is responsible for deleting a Jamf Pro File Share Distribution Point from the remote system.
 func delete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	return common.Delete(
 		ctx,
